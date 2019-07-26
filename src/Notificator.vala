@@ -105,6 +105,8 @@ public class Tootle.Notificator : GLib.Object {
                 var notif = API.Notification.parse (sanitize (root));
                 notification (notif);
                 break;
+            case null:
+                return;
             default:
                 warning ("Unknown push event: %s", type);
                 break;
