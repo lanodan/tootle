@@ -11,7 +11,9 @@ public class Tootle.Html {
         .replace("</br>", "")
         .replace("<br />", "\n")
         .replace("<p>", "")
-        .replace("</p>", "\n\n");
+        .replace("</p>", "\n\n")
+        .replace("<em>", "<i>")
+        .replace("</em>", "</i>");
 
         var html_params = new Regex("(class|target|rel|data-user|data-tag)=\"(.|\n)*?\"", RegexCompileFlags.CASELESS);
         var simplified = html_params.replace(divided, -1, 0, "");
